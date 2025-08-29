@@ -216,7 +216,7 @@ const handleSubmit = async (e) => {
     }
   } catch (error) {
     console.error("Network or API call error:", error);
-    alert("There was a problem sending your message. Please try again or contact me directly at anshulkotwal12@gmail.com");
+    alert("There was a problem sending your message. Please try again or contact me directly at eshukla15@gmail.com");
   } finally {
     setIsSubmitting(false);
   }
