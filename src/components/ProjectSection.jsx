@@ -47,8 +47,8 @@ const projects = [
 
   {
     id: 3,
-    title: "Poseidon - Lil bro of Zeus",
-    description: " simple keylogger script built in Python",
+    title: "Poseidon - KeyLogger",
+    description: " Simple keylogger script built in Python",
     image: "/projects/project4.png",
     tags: ["Python", "Networking", "Sockets"],
     githubUrl: "https://github.com/eshukla15/Poseidon",
