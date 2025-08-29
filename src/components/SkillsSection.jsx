@@ -8,23 +8,35 @@ const skills = [
   { name: "React", level: 90, category: "frontend" },
   { name: "TypeScript", level: 85, category: "frontend" },
   { name: "Tailwind CSS", level: 90, category: "frontend" },
-  { name: "Next.js", level: 80, category: "frontend" },
+  
 
   // Backend
   { name: "Node.js", level: 80, category: "backend" },
   { name: "Express", level: 75, category: "backend" },
   { name: "MongoDB", level: 70, category: "backend" },
-  { name: "PostgreSQL", level: 65, category: "backend" },
-  { name: "GraphQL", level: 60, category: "backend" },
+    { name: "Python", level: 85, category: "backend" },
+    { name: "Django", level: 70, category: "backend" },
+
+// Cybersecurity tools
+    { name: "Linux", level: 70, category: "Cybersecurity" },
+    { name: "Wireshark", level: 80, category: "Cybersecurity" },
+    { name: "Nmap", level: 75, category: "Cybersecurity" },
+    { name: "Metasploit", level: 65, category: "Cybersecurity" },
+    { name: "Virtual Machine", level: 75, category: "Cybersecurity" },
+
+    //Networking
+    { name: "Cisco Packet Tracer", level: 80, category: "Networking" },
+    { name: "HTTP/HTTPS", level: 85, category: "Networking   " },
+    { name: "TCP/IP", level: 70, category: "Networking" },  
 
   // Tools
-  { name: "Git/GitHub", level: 90, category: "tools" },
-  { name: "Docker", level: 70, category: "tools" },
-  { name: "Figma", level: 85, category: "tools" },
-  { name: "VS Code", level: 95, category: "tools" },
+  { name: "Git/GitHub", level: 90, category: "devtools" },
+  { name: "Docker", level: 70, category: "devtools" },
+  { name: "VS Code", level: 95, category: "devtools" },
+    { name: "Postman", level: 80, category: "devtools" },
 ];
 
-const categories = ["all", "frontend", "backend", "tools"];
+const categories = ["all", "frontend",  "backend", "Cybersecurity", "Networking","devtools"];
 
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");

@@ -372,7 +372,7 @@ const handleSubmit = async (e) => {
                   <Send className="text-cyan-400 animate-pulse" size={20} />
                   Send Message
                 </h3>
-                <p className={`${themeClasses.text.muted} mb-4 sm:mb-6 text-sm sm:text-base`}>Let's build something amazing together!</p>
+                <p className={`${themeClasses.text.muted} mb-4 sm:mb-6 text-sm sm:text-base`}>Just a step away!</p>
 
                 {/* Enhanced Success Message */}
                 {showSuccess && (
@@ -435,7 +435,6 @@ const handleSubmit = async (e) => {
                       </>
                     ) : (
                       <>
-                        <Sparkles size={16} className="animate-pulse" />
                         Send Message
                         <Send size={16} />
                       </>

@@ -318,7 +318,7 @@ export const HeroSection = ({ isDarkMode = true }) => {
                 textShadow: isDarkMode ? '0 0 20px rgba(59, 130, 246, 0.5)' : '0 0 20px rgba(59, 130, 246, 0.2)'
               }}
             >
-              Hi, I'm
+              Hey, I'm
             </span>
             <span
               className={`inline-block transform transition-all duration-1000 ease-out ml-4 ${isLoaded ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-16 scale-150'
@@ -369,7 +369,7 @@ export const HeroSection = ({ isDarkMode = true }) => {
                 textShadow: isDarkMode ? '0 2px 10px rgba(0, 0, 0, 0.3)' : '0 2px 10px rgba(0, 0, 0, 0.1)'
               }}
             >
-              about me info to be added
+              Curious explorer of tech, captivated by the inner workings of computers. From full-stack projects to diving into cybersecurity and networking, I am constantly building, learning, and soon venturing into AI/ML.
             </p>
           </div>
 

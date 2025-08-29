@@ -29,7 +29,7 @@ const projects = [
     gradient: "from-green-500 to-teal-500",
     color: "green",
     difficulty: "Advanced",
-    category: "Games"
+    category: "Gaming"
   },
   {
     id: 3,
@@ -50,7 +50,7 @@ const projects = [
     title: "Poseidon - KeyLogger",
     description: " Simple keylogger script built in Python",
     image: "/projects/project4.png",
-    tags: ["Python", "Networking", "Sockets"],
+    tags: ["Python", "Stealth", "Cyber Security"],
     githubUrl: "https://github.com/eshukla15/Poseidon",
     icon: Sparkles,
     gradient: "from-orange-500 to-red-500",
@@ -461,12 +461,10 @@ const ProjectCard = ({ project, index }) => {
 const ProjectFilter = ({ activeFilter, setActiveFilter }) => {
   const filters = [
     { id: 'all', label: 'All Projects', icon: Layers },
-    { id: 'AI/ML', label: 'AI & ML', icon: Brain },
-    { id: 'Game Dev', label: 'Games', icon: Gamepad2 },
-    { id: 'Real-time', label: 'Real-time', icon: Zap },
-    { id: 'Website', label: 'Websites', icon: Code },
-    { id: 'Cybersecurity', label: 'Cybersecuirty', icon: Code }
-
+        { id: 'Networking', label: 'Networking', icon: Code },
+    { id: 'Cybersecurity', label: 'Cybersecuirty', icon: Code },
+    { id: 'Gaming', label: 'Gaming', icon: Gamepad2 },
+    { id: 'Full-Stack', label: 'Full-Stack', icon: Zap }
   ];
 
   return (
@@ -557,10 +555,11 @@ export const ProjectsSection = () => {
         </h2>
           <p className="text-gray-400 text-lg max-w-4xl mx-auto leading-relaxed">
             A curated collection of my most impactful work — showcasing expertise in full-stack development,
-            3D graphics, AI integration, and cutting-edge web technologies. Each project represents a unique
+            cyber security and algorithms. Each project represents a unique
             challenge solved with innovative solutions.
+            
           </p>
-      
+      <br />
 
         {/* Filter buttons */}
         <ProjectFilter activeFilter={activeFilter} setActiveFilter={setActiveFilter} />
