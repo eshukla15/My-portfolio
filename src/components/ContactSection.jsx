@@ -212,7 +212,7 @@ const handleSubmit = async (e) => {
     } else {
       const errorData = await response.json();
       console.error("Brevo API error:", errorData);
-      alert(`Failed to send message. Error: ${errorData.message || 'Unknown error'}. Please try again or contact me directly at anshulkotwal12@gmail.com`);
+      alert(`Failed to send message. Error: ${errorData.message || 'Unknown error'}. Please try again or contact me directly at eshukla15@gmail.com`);
     }
   } catch (error) {
     console.error("Network or API call error:", error);
