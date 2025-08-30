@@ -458,13 +458,12 @@ export const Navbar = () => {
                 )}
               >
                 <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 p-1.5 sm:p-2 mr-2 sm:mr-3 shadow-lg">
-                  <Sparkles className="text-white w-full h-full" />
                 </div>
                 <span className={cn(
                   "bg-clip-text text-transparent font-extrabold tracking-tight",
                   themeColors.logoGradient
                 )}>
-                  Anshul
+                  Eshan
                 </span>
               </a>
 
@@ -588,9 +587,7 @@ export const Navbar = () => {
                   transition: `all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) ${isMenuOpen ? (0.1 + navItems.length * 0.05 + 0.1) : 0}s`
                 }}
               >
-                <Zap size={16} className={themeColors.highlightText} />
-                <span>Anshul&apos;s Portfolio</span>
-                <Zap size={16} className={themeColors.highlightText} />
+                <span>Eshan&apos;s Portfolio</span>
               </div>
             </div>
           </div>
