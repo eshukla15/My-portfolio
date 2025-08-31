@@ -46,7 +46,7 @@ const projects = [
   },
 
   {
-    id: 3,
+    id: 4,
     title: "Poseidon - KeyLogger",
     description: " Simple keylogger script built in Python",
     image: "/projects/project4.png",
@@ -59,7 +59,20 @@ const projects = [
     category: "Cybersecurity"
     
   },
-  
+    {
+    id: 5,
+    title: "2048",
+    description: "A clone of the popular 2048 game built using pygame and logic.",
+    image: "/projects/project5.jpg",
+    tags: ["Python", "Pygame", "Game Development"],
+    githubUrl: "https://github.com/eshukla15/2048",
+    icon: Gamepad2,
+    gradient: "from-green-500 to-teal-500",
+    color: "green",
+    difficulty: "Beginner",
+    category: "Gaming"
+    
+  },
   
   
 ];
@@ -461,12 +474,13 @@ const ProjectCard = ({ project, index }) => {
 const ProjectFilter = ({ activeFilter, setActiveFilter }) => {
   const filters = [
     { id: 'all', label: 'All Projects', icon: Layers },
-        { id: 'Networking', label: 'Networking', icon: Code },
+    { id: 'Full-Stack', label: 'Full-Stack', icon: Zap },
+    { id: 'Networking', label: 'Networking', icon: Code },
     { id: 'Cybersecurity', label: 'Cybersecuirty', icon: Code },
-    { id: 'Gaming', label: 'Gaming', icon: Gamepad2 },
-    { id: 'Full-Stack', label: 'Full-Stack', icon: Zap }
+    { id: 'Gaming', label: 'Gaming', icon: Gamepad2 }
+   
   ];
-
+ 
   return (
     <div className="flex flex-wrap justify-center gap-3 mb-16" role="tablist" aria-label="Project filters">
       {filters.map((filter) => {

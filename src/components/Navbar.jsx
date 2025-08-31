@@ -245,7 +245,7 @@ export const Navbar = () => {
         className={cn(
           "fixed w-full z-50 transition-all duration-500 ease-out",
           isScrolled
-            ? `py-2 sm:py-3 ${themeColors.bg} ${themeColors.mobileDrawerGlassEffect} ${themeColors.shadow} border-b ${themeColors.border}`
+            ? `py-2 sm:py-3 ${themeColors.bg}  ${themeColors.shadow} border-b ${themeColors.border}`
             : "py-3 sm:py-5 bg-transparent"
         )}
         onMouseEnter={() => setIsHovered(true)}
@@ -276,7 +276,7 @@ export const Navbar = () => {
                     Eshan's
                   </span>
                   <span className={cn(
-                    "ml-1 sm:ml-2 transition-colors duration-300 font-medium hidden sm:inline",
+                    "ml-1 sm:ml-2 transition-colors duration-300 font-medium ",
                     themeColors.primaryText
                   )}>
                     Portfolio
