@@ -23,7 +23,7 @@ export default function Resume() {
           
 <Link to="/portfolio" className="hover:underline text-blue-400">
   Portfolio
-</Link>  </p>
+</Link> </p>
         </header>
 
         {/* Summary */}
