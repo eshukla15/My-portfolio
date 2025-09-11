@@ -15,7 +15,6 @@ const skills = [
   { name: "Express", level: 75, category: "backend" },
   { name: "MongoDB", level: 70, category: "backend" },
     { name: "Python", level: 85, category: "backend" },
-    { name: "Django", level: 70, category: "backend" },
 
 // Cybersecurity tools
     { name: "Linux", level: 70, category: "Cybersecurity" },
@@ -31,7 +30,6 @@ const skills = [
 
   // Tools
   { name: "Git/GitHub", level: 90, category: "devtools" },
-  { name: "Docker", level: 70, category: "devtools" },
   { name: "VS Code", level: 95, category: "devtools" },
     { name: "Postman", level: 80, category: "devtools" },
 ];
@@ -72,23 +70,14 @@ export const SkillsSection = () => {
           {filteredSkills.map((skill, key) => (
             <div
               key={key}
-              className="bg-card p-6 rounded-lg shadow-xs card-hover"
+              className="bg-card p-6 rounded-lg shadow-xs "
             >
-              <div className="text-left mb-4">
+              
                 <h3 className="font-semibold text-lg"> {skill.name}</h3>
-              </div>
-              <div className="w-full bg-secondary/50 h-2 rounded-full overflow-hidden">
-                <div
-                  className="bg-primary h-2 rounded-full origin-left animate-[grow_1.5s_ease-out]"
-                  style={{ width: skill.level + "%" }}
-                />
-              </div>
+              
+             
 
-              <div className="text-right mt-1">
-                <span className="text-sm text-muted-foreground">
-                  {skill.level}%
-                </span>
-              </div>
+              
             </div>
           ))}
         </div>

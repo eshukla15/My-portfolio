@@ -37,10 +37,9 @@ export const Navbar = () => {
   const navItems = [
     { name: "Home", href: "#hero", icon: Home },
     { name: "About", href: "#about", icon: User },
-    { name: "Skills", href: "#skills", icon: Code },
-        { name: "Certificates", href: "#certificates", icon: Award },
-
     { name: "Projects", href: "#projects", icon: Briefcase },
+    { name: "Certificates", href: "#certificates", icon: Award },
+    { name: "Skills", href: "#skills", icon: Code },
     { name: "Contact", href: "#contact", icon: Mail },
   ];
 

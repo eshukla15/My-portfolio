@@ -507,7 +507,7 @@ const ProjectFilter = ({ activeFilter, setActiveFilter }) => {
   );
 };
 
-export const ProjectsSection = () => {
+export const ProjectSection = () => {
   const containerRef = useRef();
   const titleRef = useRef();
   const [activeFilter, setActiveFilter] = useState('all');

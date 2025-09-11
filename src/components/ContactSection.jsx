@@ -16,8 +16,8 @@ import {
   Moon,
   Sun,
 } from "lucide-react";
-import React from "react";
 import { useState, useEffect, useRef } from "react";
+import emailjs from '@emailjs/browser';
 
 export const ContactSection = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
@@ -158,86 +158,49 @@ const handleSubmit = async (e) => {
     return;
   }
 
-  setIsSubmitting(true);
+setIsSubmitting(true);
 
-  // CORRECTED LINE: Use import.meta.env for Vite and modern setups
-  // If you are using Create React App (older versions), you might still need process.env.REACT_APP_BREVO_API_KEY
-  // but for the "process is not defined" error, import.meta.env is the solution.
-  const brevoApiKey = import.meta.env.VITE_BREVO_API_KEY; 
+const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-  if (!brevoApiKey) {
-    console.error("Brevo API key is not defined. Please set VITE_BREVO_API_KEY in your .env file.");
-    alert("Error: Email service not configured. Please ensure the API key is set correctly.");
-    setIsSubmitting(false);
-    return;
-  }
+if (!serviceID || !templateID || !publicKey) {
+  console.error("EmailJS keys are not set properly in .env file.");
+  alert("Error: Email service not configured. Please check your API keys.");
+  setIsSubmitting(false);
+  return;
+}
 
-  const emailData = {
-  // Use your verified Brevo sender email here
-  sender: { name: "Your Portfolio", email: "eshukla15@gmail.com" },
-  // The recipient remains your email
-  to: [{ email: "eshukla15@gmail.com", name: "Eshan Shukla" }],
-  // Adjust subject to include user's name
-  subject: `New Message from ${formData.name} (Portfolio Contact)`,
-  htmlContent: `
-    <div style="font-family: Arial, sans-serif; font-size: 15px; color: #333;">
-        <h2 style="margin-bottom: 0;">📩 New Message from Your Portfolio!</h2>
-        <hr style="margin: 10px 0;" />
-        <p><strong>Name:</strong> ${formData.name}</p>
-        <p><strong>Email:</strong> <a href="mailto:${formData.email}">${formData.email}</a></p>
-        <hr style="margin: 20px 0;" />
-        <p style="white-space: pre-line;"><strong>Message:</strong><br/>${formData.message}</p>
-        <br/>
-        <p>Best regards,</p>
-        <p>${formData.name}</p>
-    </div>
-  `,
+// EmailJS expects key-value pairs matching your template variables
+const templateParams = {
+  name: formData.name,
+  email: formData.email,
+  message: formData.message,
 };
 
-  try {
-    const response = await fetch("https://api.brevo.com/v3/smtp/email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "api-key": brevoApiKey,
-        Accept: "application/json",
-      },
-      body: JSON.stringify(emailData),
-    });
+try {
+  const response = await emailjs.send(serviceID, templateID, templateParams, publicKey);
 
-    if (response.ok) {
-      setShowSuccess(true);
-      setFormData({ name: "", email: "", message: "" });
-      setTimeout(() => setShowSuccess(false), 5000);
-    } else {
-      const errorData = await response.json();
-      console.error("Brevo API error:", errorData);
-      alert(`Failed to send message. Error: ${errorData.message || 'Unknown error'}. Please try again or contact me directly at eshukla15@gmail.com`);
-    }
-  } catch (error) {
-    console.error("Network or API call error:", error);
-    alert("There was a problem sending your message. Please try again or contact me directly at eshukla15@gmail.com");
-  } finally {
-    setIsSubmitting(false);
+  if (response.status === 200 && response.text === "OK") {
+    setShowSuccess(true);
+    setFormData({ name: "", email: "", message: "" });
+    setTimeout(() => setShowSuccess(false), 5000);
+  } else {
+    console.error("EmailJS response error:", response);
+    alert("Failed to send message. Please try again or contact me directly at eshukla15@gmail.com");
   }
+} catch (error) {
+  console.error("EmailJS error:", error);
+  alert("There was a problem sending your message. Please try again later.");
+} finally {
+  setIsSubmitting(false);
+}
 };
-
-// ... (rest of your component)
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-  };
-
-  return (
+return (
     <section
       ref={sectionRef}
-      id="contact"
-      className={`relative py-8 sm:py-12 md:py-20 px-4 md:px-6 min-h-screen overflow-hidden ${themeClasses.background} transition-colors duration-500`}
-      style={{
-        perspective: "1000px",
-        background: "transparent",
-      }}
+      className={`relative overflow-hidden py-16 sm:py-24 md:py-32 ${themeClasses.background}`}
     >
-      {/* Theme Toggle Button */}
 
       {/* Animated Background Particles - Hidden on mobile for performance */}
       <div className="absolute inset-0 pointer-events-none hidden md:block">
@@ -480,22 +443,7 @@ const ContactInfo = ({ icon, label, value, link, delay, themeClasses }) => (
   </div>
 );
 
-const SocialIcon = ({ href, icon, color, label }) => (
-  <div className="group relative">
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${color} flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:rotate-12 hover:shadow-lg transform-gpu relative overflow-hidden`}
-    >
-      <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-      <div className="relative z-10">{icon}</div>
-    </a>
-    <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-20">
-      {label}
-    </div>
-  </div>
-);
+
 
 const InputField = ({ label, name, placeholder, type = "text", isTextarea = false, value, onChange, icon, themeClasses }) => (
   <div className="group relative">
