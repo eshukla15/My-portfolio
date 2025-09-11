@@ -1,20 +1,10 @@
 import {
-  Instagram,
-  Linkedin,
   Mail,
   MapPin,
   Phone,
   Send,
-  Github,
-  Twitter,
   User,
   MessageCircle,
-  Sparkles,
-  Zap,
-  Heart,
-  Star,
-  Moon,
-  Sun,
 } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import emailjs from '@emailjs/browser';
@@ -198,6 +188,7 @@ try {
 };
 return (
     <section
+      id="contact"
       ref={sectionRef}
       className={`relative overflow-hidden py-16 sm:py-24 md:py-32 ${themeClasses.background}`}
     >

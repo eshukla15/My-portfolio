@@ -18,12 +18,8 @@ export default function Resume() {
             | +91 9336220936
           </p>
           <p>
-            <a href="https://linkedin.com?in/eshan-shukla" className="font:sm hover:underline  text-blue-400" >LinkedIn    </a>|<a href="https://github.com/eshukla15" className="hover:underline text-blue-400"> GitHub </a>
-             | 
-          
-<Link to="/portfolio" className="hover:underline text-blue-400">
-  Portfolio
-</Link> </p>
+            <a href="https://linkedin.com/in/eshan-shukla" className="font:sm hover:underline  text-blue-400" >LinkedIn    </a>|<a href="https://github.com/eshukla15" className="hover:underline text-blue-400"> GitHub </a>
+             </p>
         </header>
 
         {/* Summary */}

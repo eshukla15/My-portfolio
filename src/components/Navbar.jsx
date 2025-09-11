@@ -304,14 +304,14 @@ export const Navbar = () => {
                     "relative flex items-center gap-2 px-3 xl:px-4 py-2 rounded-full transition-all duration-300 group cursor-pointer font-medium text-sm overflow-hidden",
                     isActive
                       ? `${themeColors.desktopActiveItemBg} text-white ${themeColors.desktopActiveItemShadow}`
-                      : cn(themeColors.mutedText, themeColors.desktopMenuItemHover, 'hover:text-indigo-400')
+                      : cn(themeColors.mutedText, themeColors.desktopMenuItemHover, )
                   )}
                   style={{ animationDelay: `${index * 0.05}s` }}
                   aria-current={isActive ? 'page' : undefined}
                 >
                   {/* Active background glow */}
                   {isActive && (
-                    <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full blur-sm opacity-30 animate-pulse-slow-fade" />
+                    <div className="absolute inset-0  rounded-full blur-sm opacity-30 animate-pulse-slow-fade" />
                   )}
                   {/* Hover effect overlay */}
                   {!isActive && (
@@ -456,13 +456,9 @@ export const Navbar = () => {
                   themeColors.primaryText
                 )}
               >
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 p-1.5 sm:p-2 mr-2 sm:mr-3 shadow-lg">
-                </div>
-                <span className={cn(
-                  "bg-clip-text text-transparent font-extrabold tracking-tight",
-                  themeColors.logoGradient
-                )}>
-                  Eshan
+                
+                <span >
+                  Eshan Shukla
                 </span>
               </a>
 
