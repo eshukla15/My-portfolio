@@ -1,6 +1,6 @@
 
 import "@fontsource/libertinus-serif"; 
-
+import { Link } from "react-router-dom";
 export default function Resume() {
   return (
     <div className="font-[Cambria] leading-relaxed min-h-screen bg-background text-foreground flex px-6 py-6">
@@ -20,8 +20,10 @@ export default function Resume() {
           <p>
             <a href="https://linkedin.com?in/eshan-shukla" className="font:sm hover:underline  text-blue-400" >LinkedIn    </a>|<a href="https://github.com/eshukla15" className="hover:underline text-blue-400"> GitHub </a>
              | 
-            <a href="https://eshan-shukla.vercel.app/portfolio" className="hover:underline  text-blue-400">  Portfolio  </a>
-          </p>
+          
+<Link to="/portfolio" className="hover:underline text-blue-400">
+  Portfolio
+</Link>  </p>
         </header>
 
         {/* Summary */}
