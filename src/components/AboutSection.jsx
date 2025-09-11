@@ -32,7 +32,7 @@ export const AboutSection = () => {
               </a>
 
               <a
-                href="https://drive.google.com/file/d/1VBDo-HHzVsLUDBXcucTOT7b4lNG7drz1/view?usp=sharing"
+                href="https://drive.google.com/file/d/1zPeWN57EBdJ0QLc2cCz5XKlmp0oFewGE/view?usp=sharing"
                 className="px-6  py-2 font-bold rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
               >
                 Download Resume

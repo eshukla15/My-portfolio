@@ -1,6 +1,4 @@
 
-import "@fontsource/libertinus-serif"; 
-import { Link } from "react-router-dom";
 export default function Resume() {
   return (
     <div className="font-[Cambria] leading-relaxed min-h-screen bg-background text-foreground flex px-6 py-6">
@@ -14,7 +12,7 @@ export default function Resume() {
           <p >
             <a href="mailto:eshukla15@gmail.com" className="hover:underline">
               eshukla15@gmail.com
-            </a>{" "}
+            </a>
             | +91 9336220936
           </p>
           <p>
@@ -112,7 +110,7 @@ export default function Resume() {
 
       {/* Floating download button */}
       <a
-  href="https://drive.google.com/file/d/1VBDo-HHzVsLUDBXcucTOT7b4lNG7drz1/view"
+  href="https://drive.google.com/file/d/1zPeWN57EBdJ0QLc2cCz5XKlmp0oFewGE/view?usp=sharing"
   download
   className="fixed bottom-6 right-6 bg-blue-600 text-white px-4 py-2 rounded-full shadow-lg hover:bg-blue-500 transition-colors text-sm font-medium"
 >
